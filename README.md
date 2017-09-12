@@ -1,4 +1,8 @@
-# AutomatedOnlineBehaviourDetection
+# Automated Online Behaviour Detection
+
+This project examines the complexities of automatically detecting improper behaviour on online Social Networks. 
+Improper behaviour such as cyber-bullying, cyber-stalking and hate speech detection will be explored. 
+The project considers how technological innovations such as sentiment analysis can restrict the harm caused by improper behaviour and content on online Social Networks.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
 
