@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
+import { BasicSentimentAnalysisComponent } from './basic-sentiment-analysis/basic-sentiment-analysis-page.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  entryComponents: [BasicSentimentAnalysisComponent]
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Automate Online Behavior Detection';
 }
