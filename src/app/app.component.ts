@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { BasicSentimentAnalysisComponent } from './basic-sentiment-analysis/basic-sentiment-analysis-page.component';
+import { SideNavComponent } from './shared-components/side-nav.component';
+import { HeaderComponent } from './shared-components/header.component';
 
 /* Services */
 import {
@@ -10,11 +11,13 @@ import {
   SocialSentence
 } from './services/social-sentiment-analysis.service';
 
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  entryComponents: [
+    SideNavComponent,
+    HeaderComponent
+  ],
   providers: [SocialSentimentAnalysisService]
 })
 export class AppComponent implements OnInit {
