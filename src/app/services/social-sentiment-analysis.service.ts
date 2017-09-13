@@ -22,10 +22,28 @@ export class SocialSentenceList {
 export class SocialSentimentAnalysisService {
 
   getSentimentOfSentence(sentence: SocialSentence) {
+    const input = {
+      'sentence': 'This old product sucks! But after the update it works like a charm!'
 
+    };
+    window['Algorithmia'].client('simtA9pzwJxBhUzCT4uDXzHbGiS1')
+      .algo('algo://nlp/SocialSentimentAnalysis/0.1.4')
+      .pipe(input)
+      .then(function(output) {
+        console.log(output);
+      });
   }
 
   getSentimentOfSentenceList(sentenceList: SocialSentenceList) {
+    const input = {
+      'sentence': 'This old product sucks! But after the update it works like a charm!'
 
+    };
+    window['Algorithmia'].client('simtA9pzwJxBhUzCT4uDXzHbGiS1')
+      .algo('algo://nlp/SocialSentimentAnalysis/0.1.4')
+      .pipe(input)
+      .then(function(output) {
+        console.log(output);
+      });
   }
 }

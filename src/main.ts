@@ -8,5 +8,14 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+const bootApplication = () => {
+  platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));
+};
+
+if (document.readyState === 'complete') {
+  window.onload = () => bootApplication();
+  location.reload();
+} else {
+  document.addEventListener('DOMContentLoaded', bootApplication);
+}

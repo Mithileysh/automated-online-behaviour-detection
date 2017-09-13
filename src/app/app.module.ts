@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
+/* Components */
 import { AppComponent } from './app.component';
-
 import { BasicSentimentAnalysisComponent } from './basic-sentiment-analysis/basic-sentiment-analysis-page.component';
 
-import { SocialSentimentAnalysisService, SocialSentence, SocialSentenceList } from './services/social-sentiment-analysis.service';
+/* Services */
+import { SocialSentimentAnalysisService } from './services/social-sentiment-analysis.service';
 
+/* Modules */
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,17 +18,11 @@ import { SocialSentimentAnalysisService, SocialSentence, SocialSentenceList } fr
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      {
-        path: 'positive-negative-sa',
-        component: BasicSentimentAnalysisComponent
-      }
-    ])
+    AppRoutingModule
   ],
   providers: [ SocialSentimentAnalysisService ],
   bootstrap: [
-    AppComponent,
-    BasicSentimentAnalysisComponent
+    AppComponent
   ]
 })
 export class AppModule { }
