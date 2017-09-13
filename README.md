@@ -1,7 +1,14 @@
-# Automated Online Behaviour Detection
+# Automated Detection of Improper Behaviour on Online Social Networks
+
+Submitted as part of the requirements for Project 4 in the B Tech (I.T.) program at the Cape Peninsula University of Technology.
 
 This project examines the complexities of automatically detecting improper behaviour on online Social Networks. Improper behaviour such as cyber-bullying, cyber-stalking and hate speech detection will be explored. 
 The project considers how technological innovations such as sentiment analysis can restrict the harm caused by improper behaviour and content on online Social Networks.
+
+Nathaniel Brown
+209076879
+
+## Build Instructions
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
 
