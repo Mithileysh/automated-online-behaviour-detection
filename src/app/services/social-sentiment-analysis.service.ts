@@ -1,5 +1,13 @@
 import { Injectable } from '@angular/core';
 
+export interface ISocialSentimentAnalysisResult {
+  sentence: string;
+  positive: number;
+  negative: number;
+  neutral: number;
+  compound: number;
+}
+
 export class SocialSentence {
 
   private sentence: string;
@@ -44,6 +52,8 @@ export class SocialSentimentAnalysisService {
       .pipe(input)
       .then(function(output) {
         console.log(output);
+
+        return output;
       });
   }
 }
