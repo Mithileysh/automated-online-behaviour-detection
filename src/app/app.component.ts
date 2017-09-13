@@ -44,29 +44,27 @@ export class AppComponent implements OnInit {
   onPlaygroundClick($event) {
     $event.preventDefault();
 
-    const input = {
+    const input ={
       'sentence': 'iPhones are the best cellular phones!'
     };
-    window['Algorithmia'].client('simtA9pzwJxBhUzCT4uDXzHbGiS1')
+
+    window['Algorithmia']
+      .client('simtA9pzwJxBhUzCT4uDXzHbGiS1')
       .algo('algo://nlp/SocialSentimentAnalysis/0.1.4')
       .pipe(input)
       .then((output) => {
+
         console.log(output);
 
-        if (output.error === 'API connection error') {
+        if (output.error && output.error === 'API connection error') {
 
         } else {
 
           this.playgroudnResults['push'](
-
             output.result[0]
-
           );
         }
 
-
       });
-
-
   }
 }
