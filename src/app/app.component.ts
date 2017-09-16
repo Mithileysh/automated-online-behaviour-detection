@@ -47,6 +47,8 @@ export class AppComponent implements OnInit {
   onPlaygroundClick($event) {
     $event.preventDefault();
 
+
+
     const input ={
       'sentence': 'iPhones are the best cellular phones!'
     };
@@ -68,6 +70,7 @@ export class AppComponent implements OnInit {
           );
         }
 
-      });
+      }
+    );
   }
 }
