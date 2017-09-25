@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router }            from '@angular/router';
 
-import { SideNavComponent } from '../shared-components/side-nav.component';
-import { HeaderComponent } from '../shared-components/header.component';
+import { SideNavComponent }  from '../shared-components/side-nav.component';
+import { HeaderComponent }   from '../shared-components/header.component';
 
 /* Services */
 import {
@@ -11,9 +11,12 @@ import {
   SocialSentence
 } from '../services/social-sentiment-analysis.service';
 
+declare var jQuery:any;
+declare var $:any;
+
 @Component({
   selector: 'dashboard',
-  templateUrl: './dashboard.component.html',
+  templateUrl: './dashboard.template.html',
   entryComponents: [
     SideNavComponent,
     HeaderComponent
@@ -21,8 +24,10 @@ import {
   providers: [SocialSentimentAnalysisService]
 })
 export class DashboardComponent implements OnInit {
+
   title = 'Automate Online Behavior Detection';
 
+  playgroundLoading = false;
   playgroudnResults: ISocialSentimentAnalysisResult[];
 
   constructor(
@@ -47,8 +52,16 @@ export class DashboardComponent implements OnInit {
   onPlaygroundClick($event) {
     $event.preventDefault();
 
+    this.playgroundLoading = true;
+
+    let playgroundSentence = jQuery('#input-sa-playground').val();
+
+    if (!playgroundSentence) {
+      playgroundSentence = 'iPhones are the best cellular phones!';
+    }
+
     const input ={
-      'sentence': 'iPhones are the best cellular phones!'
+      'sentence': playgroundSentence
     };
 
     window['Algorithmia']
@@ -58,6 +71,8 @@ export class DashboardComponent implements OnInit {
       .then((output) => {
 
           console.log(output);
+
+          this.playgroundLoading = false;
 
           if (output.error && output.error === 'API connection error') {
 

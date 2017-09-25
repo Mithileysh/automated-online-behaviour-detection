@@ -1,7 +1,7 @@
 <nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2 bg-faded sidebar-style-1">
 
   <h1 class="site-title">
-    <a href="index.html">
+    <a href="/">
       <span>AUTOAMATED DETECTION OF IMPROPER BEHAVIOR ON ONLINE SOCIAL NETWORKS</span>
     </a>
   </h1>
@@ -10,11 +10,11 @@
 
   <ul class="nav nav-pills flex-column sidebar-nav">
     <li class="nav-item">
-      <a class="nav-link active" href="/dashboard" (click)="onDashboardClick($event)">
+      <a class="nav-link" [class.active]="linkId === 1" href="/dashboard" (click)="onDashboardClick($event)">
         <em class="fa fa-dashboard"></em> Dashboard <span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/basic-sentiment-analysis" (click)="onBasicSentimentAnalysisClick($event)">
+      <a class="nav-link" [class.active]="linkId === 2" href="/basic-sentiment-analysis" (click)="onBasicSentimentAnalysisClick($event)">
         <em class="fa fa-bar-chart"></em> Basic Sentiment Analysis </a>
     </li>
   </ul>

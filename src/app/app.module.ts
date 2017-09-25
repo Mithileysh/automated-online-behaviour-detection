@@ -1,11 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule }      from '@angular/core';
+import { BrowserModule }    from '@angular/platform-browser';
+import { NgModule }         from '@angular/core';
+import { HttpModule }       from '@angular/http';
 
 /* Components */
 import { AppComponent }       from './app.component';
 import { SideNavComponent }   from './shared-components/side-nav.component';
 import { HeaderComponent }    from './shared-components/header.component';
-import { DashboardComponent } from './dashboard/dashboard.component'
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { BasicSentimentAnalysisComponent } from './basic-sentiment-analysis/basic-sentiment-analysis-page.component';
 
 /* Services */
@@ -24,6 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     AppRoutingModule
   ],
   providers: [ SocialSentimentAnalysisService ],
