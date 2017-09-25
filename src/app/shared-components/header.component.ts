@@ -14,9 +14,7 @@ export class HeaderComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   onDashboardClick($event) {
     $event.preventDefault();

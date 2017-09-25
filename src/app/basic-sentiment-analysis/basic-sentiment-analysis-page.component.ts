@@ -13,7 +13,6 @@ export class BasicSentimentAnalysisComponent implements OnInit {
 
   ngOnInit(): void {
 
-
   }
 
   onDashboardClick($event) {

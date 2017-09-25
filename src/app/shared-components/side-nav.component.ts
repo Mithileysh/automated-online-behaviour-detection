@@ -25,5 +25,4 @@ export class SideNavComponent implements OnInit {
     this.router.navigate(['/basic-sentiment-analysis']);
   }
 
-
 }
