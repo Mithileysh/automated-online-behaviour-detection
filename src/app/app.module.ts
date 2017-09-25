@@ -6,6 +6,7 @@ import { HttpModule }       from '@angular/http';
 import { AppComponent }       from './app.component';
 import { SideNavComponent }   from './shared-components/side-nav.component';
 import { HeaderComponent }    from './shared-components/header.component';
+import { TimelineComponent }    from './shared-components/timeline.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BasicSentimentAnalysisComponent } from './basic-sentiment-analysis/basic-sentiment-analysis-page.component';
 
@@ -20,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     SideNavComponent,
     HeaderComponent,
+    TimelineComponent,
     DashboardComponent,
     BasicSentimentAnalysisComponent
   ],

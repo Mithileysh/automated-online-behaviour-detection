@@ -3,6 +3,7 @@ import { Router }            from '@angular/router';
 
 import { SideNavComponent }  from '../shared-components/side-nav.component';
 import { HeaderComponent }   from '../shared-components/header.component';
+import { TimelineComponent } from '../shared-components/timeline.component';
 
 /* Services */
 import {
@@ -19,7 +20,8 @@ declare var $:any;
   templateUrl: './dashboard.template.html',
   entryComponents: [
     SideNavComponent,
-    HeaderComponent
+    HeaderComponent,
+    TimelineComponent
   ],
   providers: [SocialSentimentAnalysisService]
 })
