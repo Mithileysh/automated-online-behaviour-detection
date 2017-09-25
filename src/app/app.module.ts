@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule }      from '@angular/core';
 
 /* Components */
-import { AppComponent }     from './app.component';
-import { SideNavComponent } from './shared-components/side-nav.component';
-import { HeaderComponent }  from './shared-components/header.component';
+import { AppComponent }       from './app.component';
+import { SideNavComponent }   from './shared-components/side-nav.component';
+import { HeaderComponent }    from './shared-components/header.component';
+import { DashboardComponent } from './dashboard/dashboard.component'
 import { BasicSentimentAnalysisComponent } from './basic-sentiment-analysis/basic-sentiment-analysis-page.component';
 
 /* Services */
@@ -18,6 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     SideNavComponent,
     HeaderComponent,
+    DashboardComponent,
     BasicSentimentAnalysisComponent
   ],
   imports: [

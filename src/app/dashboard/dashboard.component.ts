@@ -20,7 +20,7 @@ import {
   ],
   providers: [SocialSentimentAnalysisService]
 })
-export class AppComponent implements OnInit {
+export class DashboardComponent implements OnInit {
   title = 'Automate Online Behavior Detection';
 
   playgroudnResults: ISocialSentimentAnalysisResult[];
