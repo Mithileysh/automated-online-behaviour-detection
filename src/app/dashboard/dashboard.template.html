@@ -1,0 +1,304 @@
+<div class="container-fluid" id="wrapper">
+  <div class="row">
+
+    <side-nav></side-nav>
+
+    <main class="col-xs-12 col-sm-8 offset-sm-4 col-lg-9 offset-lg-3 col-xl-10 offset-xl-2 pt-3 pl-4">
+
+      <app-header [title]="'Dashboard'" ></app-header>
+
+      <section class="row">
+        <div class="col-sm-12">
+
+          <!-- Let column -->
+          <section class="row">
+            <div class="col-md-12 col-lg-8">
+
+              <div class="jumbotron">
+                <h1 class="mb-4">Introduction</h1>
+
+                <p class="lead">
+                  Submitted as part of the requirements for Project 4 in the B Tech (I.T.) program at the Cape Peninsula University of Technology.
+                </p>
+
+                <p>
+                  This project examines the complexities of automatically detecting improper behaviour on online Social Networks.
+                  It examines the complexities of automatically detecting improper behaviour on online Social Networks.
+                </p>
+
+                <p>
+                  Improper behaviour such as cyber-bullying, cyber-stalking and hate speech detection will be explored.
+                  The project considers how technological innovations such as sentiment analysis can restrict the harm caused by improper behaviour and content on online Social Networks.
+                </p>
+
+                <p class="lead">
+                  <a class="btn btn-primary btn-lg mt-2" href="#" role="button">Research Article</a>
+                </p>
+
+              </div>
+
+              <!-- Playground -->
+              <div class="card mb-4">
+                <div class="card-block">
+                  <h3 class="card-title">Sentiment Analysis Playground</h3>
+
+                  <!--
+                  <div class="dropdown card-title-btn-container">
+                    <button class="btn btn-sm btn-subtle" type="button"><em class="fa fa-list-ul"></em> View All</button>
+
+                    <button class="btn btn-sm btn-subtle dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><em class="fa fa-cog"></em></button>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#"><em class="fa fa-search mr-1"></em> More info</a>
+                      <a class="dropdown-item" href="#"><em class="fa fa-thumb-tack mr-1"></em> Pin Window</a>
+                      <a class="dropdown-item" href="#"><em class="fa fa-remove mr-1"></em> Close Window</a></div>
+                  </div>
+                  -->
+
+                  <h6 class="card-subtitle mb-2 text-muted">Test the Sentiment Analysis API</h6>
+
+                  <div class="divider" style="margin-top: 1rem;"></div>
+
+                  <p>Type in an opinionated sentence to test the Sentiment Analysis API.</p>
+
+                  <div class="input-group">
+                    <input id="btn-input" type="text" class="form-control input-md" placeholder="iPhones are the best cellular phones!" />
+                    <span class="input-group-btn">
+													<button class="btn btn-primary btn-md" id="btn-todo" (click)="onPlaygroundClick($event)">Submit</button>
+											</span>
+                  </div>
+
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                      <tr>
+                        <th>Sentence</th>
+
+                        <th>Positive</th>
+
+                        <th>Negative</th>
+
+                        <th>Neutral</th>
+
+                        <th>Compound</th>
+                      </tr>
+                      </thead>
+
+                      <tbody>
+                      <tr *ngFor="let result of playgroudnResults">
+                        <td>{{ result.sentence }}</td>
+
+                        <td>{{ result.positive }}</td>
+
+                        <td>{{ result.negative }}</td>
+
+                        <td>{{ result.neutral }}</td>
+
+                        <td>{{ result.compound }}</td>
+                      </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <p>
+                    Returns sentiment ratings of positive, negative, neutral and compound in JSON format.
+                    The first three sentiments ratings scale from 0 to 1. Compound sentiment is the overall sentiment, where it scales between -1 to 1, negative to positive respectively.
+                  </p>
+
+                  <p style="font-size: 10px;">
+                    The Sentiment Analysis API uses the Social Sentiment Analysis algorithm from
+                    <a href="https://algorithmia.com/algorithms/nlp/SocialSentimentAnalysis">https://algorithmia.com/algorithms/nlp/SocialSentimentAnalysis</a>
+                    which is based on the work of Hutto & Gilbert (2014).
+                  </p>
+
+                  <p style="font-size: 10px;">
+                    Hutto, C.J and Gilbert, E.E, 2014. VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14).
+                  </p>
+
+                </div>
+              </div>
+              <!-- /Playground -->
+
+              <!-- Graph -->
+              <div class="card mb-4">
+                <div class="card-block">
+                  <h3 class="card-title">Overview</h3>
+
+                  <div class="dropdown card-title-btn-container">
+                    <button class="btn btn-sm btn-subtle" type="button"><em class="fa fa-list-ul"></em> View All</button>
+
+                    <button class="btn btn-sm btn-subtle dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><em class="fa fa-cog"></em></button>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#"><em class="fa fa-search mr-1"></em> More info</a>
+                      <a class="dropdown-item" href="#"><em class="fa fa-thumb-tack mr-1"></em> Pin Window</a>
+                      <a class="dropdown-item" href="#"><em class="fa fa-remove mr-1"></em> Close Window</a></div>
+                  </div>
+
+                  <h6 class="card-subtitle mb-2 text-muted">Latest traffic stats</h6>
+
+                  <div class="canvas-wrapper">
+                    <canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
+                  </div>
+                </div>
+              </div>
+              <!-- Graph -->
+
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-12 col-lg-4">
+              <div class="card mb-4">
+                <div class="card-block">
+
+                  <!-- Project Planning -->
+                  <h3 class="card-title">Project Planning</h3>
+
+                  <h6 class="card-subtitle mb-2 text-muted">Agile Methodology</h6>
+
+                  <div class="user-progress justify-center">
+                    <div class="col-sm-12 col-md-12" style="padding: 0;">
+                      <a class="btn btn-primary btn-lg mt-2" href="https://github.com/nate-brown/automated-online-behaviour-detection/projects/1?" role="button" target="_blank">Project Planning</a>
+                    </div>
+                  </div>
+
+                  <div class="user-progress justify-center">
+                    <div class="col-sm-12 col-md-12" style="padding: 0;">
+                      <a class="btn btn-primary btn-lg mt-2" href="https://github.com/nate-brown/automated-online-behaviour-detection/" role="button" target="_blank">GitHub Repository</a>
+                    </div>
+                  </div>
+
+                  <div class="divider"></div>
+
+                  <h3 class="card-title">Timeline</h3>
+
+                  <h6 class="card-subtitle mb-2 text-muted">What's coming up</h6>
+
+                  <ul class="timeline">
+                    <li>
+                      <div class="timeline-badge primary"><em class="fa fa-paperclip"></em></div>
+
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h5 class="timeline-title mt-2">Assignment 3</h5>
+                        </div>
+
+                        <div class="timeline-body">
+                          <p>Requirement Analysis, Design, Data Collection, Analysis and Findings</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="timeline-badge"><em class="fa fa-paperclip"></em></div>
+
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h5 class="timeline-title mt-2">Assignment 2</h5>
+                        </div>
+
+                        <div class="timeline-body">
+                          <p>Literature Review and Research Methodology</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="timeline-badge"><em class="fa fa-paperclip"></em></div>
+
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h5 class="timeline-title mt-2">Assignment 1</h5>
+                        </div>
+
+                        <div class="timeline-body">
+                          <p>Title, Introduction, Background, Research Questions, Aims and Objectives</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!--
+              <div class="card mb-4">
+                <div class="card-block">
+                  <h3 class="card-title">Todo List</h3>
+
+                  <div class="dropdown card-title-btn-container">
+                    <button class="btn btn-sm btn-subtle dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><em class="fa fa-cog"></em></button>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#"><em class="fa fa-search mr-1"></em> More info</a>
+                      <a class="dropdown-item" href="#"><em class="fa fa-thumb-tack mr-1"></em> Pin Window</a>
+                      <a class="dropdown-item" href="#"><em class="fa fa-remove mr-1"></em> Close Window</a></div>
+                  </div>
+
+                  <h6 class="card-subtitle mb-2 text-muted">A simple checklist</h6>
+
+                  <ul class="todo-list mt-2">
+                    <li class="todo-list-item">
+                      <div class="form-check">
+                        <input type="checkbox" id="checkbox-1" />
+
+                        <label for="checkbox-1">Make coffee</label>
+
+                        <div class="float-right action-buttons"><a href="#" class="trash"><em class="fa fa-trash"></em></a></div>
+                      </div>
+                    </li>
+                    <li class="todo-list-item">
+                      <div class="form-check">
+                        <input type="checkbox" id="checkbox-2" />
+
+                        <label for="checkbox-2">Check emails</label>
+
+                        <div class="float-right action-buttons"><a href="#" class="trash"><em class="fa fa-trash"></em></a></div>
+                      </div>
+                    </li>
+                    <li class="todo-list-item">
+                      <div class="form-check">
+                        <input type="checkbox" id="checkbox-3" />
+
+                        <label for="checkbox-3">Reply to Jane</label>
+
+                        <div class="float-right action-buttons"><a href="#" class="trash"><em class="fa fa-trash"></em></a></div>
+                      </div>
+                    </li>
+                    <li class="todo-list-item">
+                      <div class="form-check">
+                        <input type="checkbox" id="checkbox-4" />
+
+                        <label for="checkbox-4">Work on the new design</label>
+
+                        <div class="float-right action-buttons"><a href="#" class="trash"><em class="fa fa-trash"></em></a></div>
+                      </div>
+                    </li>
+                    <li class="todo-list-item">
+                      <div class="form-check">
+                        <input type="checkbox" id="checkbox-5" />
+
+                        <label for="checkbox-5">Get feedback</label>
+
+                        <div class="float-right action-buttons"><a href="#" class="trash"><em class="fa fa-trash"></em></a></div>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <div class="card-footer todo-list-footer">
+                    <div class="input-group">
+                      <input id="btn-input" type="text" class="form-control input-md" placeholder="Add new task" /><span class="input-group-btn">
+													<button class="btn btn-primary btn-md" id="btn-todo">Add</button>
+											</span></div>
+                  </div>
+                </div>
+              </div>
+              -->
+            </div>
+            <!-- /Right Column -->
+
+          </section>
+
+          <section class="row">
+            <div class="col-12 mt-1 mb-4">Template by <a href="https://www.medialoot.com">Medialoot</a></div>
+          </section>
+
+        </div>
+      </section>
+    </main>
+  </div>
