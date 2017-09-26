@@ -89,8 +89,9 @@ export class BasicSentimentAnalysisComponent implements OnInit {
   sentenceListCyberStalking = {
     "sentenceList": [
       "Let’s make this simple. You have until noon. I am not bluffing. Don’t be stupid. Once I send pics of you they cannot be unsent.",
-      "",
-      ""
+      "Next time a woman politely declines an unwarranted advance from you, please take that with grace and don’t try to convince her otherwise. Well what can I say, I do what I want. But, no worries since you made it very easy to see why you single",
+      "HAHAHA IM MARRIED YOU IDIOT. But nice try. Really, yeah I just went through ever single one of your pictures… sure your married lol and I am not a creep, just curious and stubborn thanks",
+      "My album is set to private you fucking idiot. Privacy settings don’t stop people who know how to get around those things on facebook, yeah and i still made it into your pics to see",
     ]
   };
 
@@ -131,7 +132,7 @@ export class BasicSentimentAnalysisComponent implements OnInit {
     window['Algorithmia']
       .client('simtA9pzwJxBhUzCT4uDXzHbGiS1')
       .algo('algo://nlp/SocialSentimentAnalysis/0.1.4')
-      .pipe(this.sentenceListHateSpeech)
+      .pipe(this.sentenceListCyberStalking)
       .then((output) => {
 
           console.log(output);
